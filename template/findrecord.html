@@ -1,0 +1,76 @@
+
+{% extends 'nav.html' %}
+
+
+{% block content %}
+
+
+<br>
+<br>
+
+<meta name="viewport" content="width=device-width, initial-scale=0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="table-responsive-sm">
+<h2>Record Table</h2>
+<table class="ttable table-dark table-hover" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+                <tr>
+                    <th bgcolor="#FF0000">ID Number</th>
+                    <th>Name</th>
+                    <th>Added date </th>
+                    <th>Membership Start Date </th>
+                    <th>Membership End Date </th>
+                    <th>Member type </th>
+                    <th>Payment type </th>
+                    <th >Rate </th> 
+                    <th>Paid </th>
+                    <th bgcolor="#FF0000">Due </th>
+                    <th>Contact Number </th>
+                    <th>Email </th>
+                    <th>Remarks</th>
+                    
+                    
+
+
+                </tr>
+            </thead>
+                <tbody>
+                {% for a in mrecord %}
+
+                    <tr>
+                        <td bgcolor="#FF0000">{{a.ID_number }}</td>
+                        <td>{{a.first_name}} {{a.last_name}}</td> 
+                        <td>{{a.date }}</td>  
+                        <td>{{a.Membership_Start_date }}</td>
+                        <td>{{a.Membership_End_date }}</td>
+                        <td>{{a.payment_type  }}</td>
+                        <td>{{a.rate }}</td>
+                        <td>{{a.paid }}</td>
+                        <td bgcolor="#FF0000">{{a.due }}</td>
+                        <td>{{a.Contact_number }}</td>
+                        <td>{{a.Email }}</td>
+                        <td>{{a.Remarks }}</td>
+                        <!-- <td>{{a. }}</td> -->
+
+                    {% endfor %}</td>
+                        
+
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+
+
+<div class="container">
+    {% if user.is_authenticated %}
+        {% csrf_token %}
+        <header class="jumbotron my-2">
+            <h1 class="display-8 text-capitalize" , align="center">Welcome {{ user.username }}</h1>
+
+        </header>
+</div>
+
+
+<div>
+
+                     <div class="row text-center">
+                        <div class="col-lg-4 col-md-5 mb-5">
+                            <div class="card">
+
+                                <img class="card-img-top"
+                                     src="../static/images/newmember.png"
+                                     alt="">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Add New Member</h4>
+                                    <p class="card-text">
+                                        Click to Add Member
+                                    <div class="card-footer">
+
+                                    </div>
+                                    <a href="{% url 'addrecord' %}">
+                                        <button type="button" class="btn btn-primary btn-lg"
+                                        >Click here to Add Member</button>
+                                    </a></p>
+                                </div>
+                            </div>
+                </div>
+
+                <div class="col-lg-3 col-md-2 mb-3">
+                    <div class="card">
+
+                        <img class="card-img-top"
+                             src="../static/images/viewrecord.jpg"
+                             alt="">
+
+                        <div class="card-body">
+                            <h4 class="card-title">View Record</h4>
+                            <p class="card-text">
+                                Click to view record
+                            <div class="card-footer">
+
+                            </div>
+                            <!-- <div>
+                                <form action="viewrecord" method="POST">{% csrf_token %}
+                                <h2 class="col-lg-3 col-md-6 mb-4 ">View Member details</h2>
+                                <input class="ccol-lg-3 col-md-6 mb-4" , type="text" class="form-control" placeholder="Enter Member'id." name="id_number"> 
+                                
+                                <button type="submit" class="btn btn-primary">view</button>
+                            </form>   
+                            
+                            </div> -->
+                            <div>
+                                <a href="{% url 'viewrecord' %}">
+                                    <button type="button" class="btn btn-primary btn-lg"
+                                    >Click here to view Members</button>
+                                </a></p>
+                            </div>
+                        
+
+             </div>
+        </div>
+    </div>
+
+
+
+ </div>
+       
+            <!-- <a href="{% url 'addrecord' %}"><button>add new record</button></a> -->
+
+
+
+
+
+    {% else %}
+
+
+        <a href="{% url 'login' %}">  Please Click here to login. </a>
+
+    {% endif %}
+
+{% endblock %}
+
+

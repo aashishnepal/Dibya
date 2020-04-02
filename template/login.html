@@ -1,0 +1,37 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+
+
+
+
+
+
+<h1 class="col-md-8 offset-md-3">Login</h1>
+<div class="col-md-6 offset-md-3">
+    <form action= "home"  method="POST">{% csrf_token %}
+        <div class="form-group">
+            
+
+            <input type="text" class="form-control" placeholder="Enter Username" name="username">
+
+        </div>
+        <div class="form-group">
+
+            <input type="password" class="form-control" placeholder="Enter Password" name="password">
+        </div>
+
+
+        <hr>
+        <button type="submit" class="btn btn-success">Login</button>
+        <hr>
+        
+   
+
+    </form>
+    <div>
+
+{% endblock %}
+        
+        
