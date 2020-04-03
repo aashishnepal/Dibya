@@ -25,6 +25,9 @@ PAYMENT_TYPE_CHOICES = [
 
 
 class Record(forms.Form):
+
+
+
     ID_number = forms.IntegerField(widget=forms.TextInput(attrs={"placeholder":""}))
     date = forms.DateField(
         input_formats=['%Y-%m-%d'],
@@ -32,7 +35,7 @@ class Record(forms.Form):
     )
     first_name = forms.CharField(max_length=30,
                     widget=forms.TextInput(attrs={"placeholder":"First Name"}))
-    last_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30 ,widget=forms.TextInput(attrs={"placeholder":"Last Name"}))
     member_type = forms.CharField(
         max_length=30,
         widget=forms.Select(choices=MEMBERSHIP_CHOICES),
@@ -80,3 +83,17 @@ class Record(forms.Form):
 
 
 
+
+# CSStoAddMemberForm
+# class PostForm(forms.ModelForm):
+# #     class Meta:
+#     fields = ['ID_number ', 'date', 'first_name', 'last_name', 'Membership_Start_date ', 
+#         'Membership_End_date', 'member_type', 'payment_type', 'rate',
+#          'paid' , 'due','Contact_number', 'Email', 'Remarks']    
+
+
+#         model = Post
+
+#         widgets = {
+
+#         } 

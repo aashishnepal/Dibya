@@ -4,10 +4,15 @@
 
 {% block content %}
 
-
-<br>
 <br>
 
+<br>
+
+<style>
+    table, th, td {
+      border: 2px solid blue;
+    }
+    </style>
 <meta name="viewport" content="width=device-width, initial-scale=0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,13 +27,13 @@
     <thead>
                 <tr>
                     <th bgcolor="#FF0000">ID Number</th>
-                    <th>Name</th>
+                    <th bgcolor="#bf0b0b">Name</th>
                     <th>Added date </th>
                     <th>Membership Start Date </th>
                     <th>Membership End Date </th>
                     <th>Member type </th>
                     <th>Payment type </th>
-                    <th >Rate </th> 
+                    <th>Rate </th> 
                     <th>Paid </th>
                     <th bgcolor="#FF0000">Due </th>
                     <th>Contact Number </th>
@@ -44,18 +49,19 @@
                 {% for a in mrecord %}
 
                     <tr>
-                        <td bgcolor="#FF0000">{{a.ID_number }}</td>
-                        <td>{{a.first_name}} {{a.last_name}}</td> 
-                        <td>{{a.date }}</td>  
-                        <td>{{a.Membership_Start_date }}</td>
-                        <td>{{a.Membership_End_date }}</td>
-                        <td>{{a.payment_type  }}</td>
-                        <td>{{a.rate }}</td>
-                        <td>{{a.paid }}</td>
-                        <td bgcolor="#FF0000">{{a.due }}</td>
-                        <td>{{a.Contact_number }}</td>
-                        <td>{{a.Email }}</td>
-                        <td>{{a.Remarks }}</td>
+                        <td bgcolor="#FF0000",width="20%">{{a.ID_number }}</td>
+                        <td width="40%", bgcolor="#bf0b0b">{{a.first_name }} {{ a.last_name}}</td> 
+                        <td width="25%">{{a.date }}</td>  
+                        <td width="10%">{{a.Membership_Start_date }}</td>
+                        <td width="10%">{{a.Membership_End_date }}</td>
+                        <td width="10%">{{a.member_type  }}</td>
+                        <td width="10%">{{a.payment_type  }}</td>
+                        <td width="10%">{{a.rate }}</td>
+                        <td width="20%">{{a.paid }}</td>
+                        <td width="30%", bgcolor="#FF0000">{{a.due }}</td>
+                        <td width="40%">{{a.Contact_number }}</td>
+                        <td width="50%">{{a.Email }}</td>
+                        <td width="50%">{{a.Remarks }}</td>
                         <!-- <td>{{a. }}</td> -->
 
                     {% endfor %}</td>

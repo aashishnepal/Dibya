@@ -5,19 +5,55 @@
 
 {% load static %}
 
+<head>
 
+<!-- <style>
+  .container {
+    position: relative;
+  }
+  
+  .topleft {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    font-size: 8px;
+  }
+  
+  img { 
+    width: 40%;
+    height: 500px;
+    opacity: 1.5;
+  }
+  </style> -->
+  </head>
+  <body> 
+
+ <div class="offset-0 col-md-3" >
+  <div class="container">
+    <img src="static/images/form-img.jpg" alt="Cinque Terre" width="500" height="600">
+    <div class="topleft"></div>
+  </div>
+</div>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'css/addrecord.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/addrecord.css' %}">  
 <title>Title</title>
 
 
-<div align = 'center'>
-  <h2>Add Members</h2>
-  <form action="{% url 'addrecord' %}" method="post">
+<div class="offset-6 col-md-4" >
+  <div class="form-group"> 
+    <h2>Add Members</h2>
+    <form action="{% url 'addrecord' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+    {% for field in form %}
+    <label>{{ field.label_tag }}</label>
+    <br>
+    {{field}}
+    <hr>  
+    {% endfor %}
+
+  </div> 
+  <button type="submit" class="offset-6 col-md-2 btn btn-success">Add</button>
 </form>
 </div>
 
@@ -26,6 +62,7 @@
 {% if message %}
     {{ message }}
 {% endif %}
+
 
 
 
@@ -113,3 +150,5 @@
 
 
 {% endblock %}
+
+
